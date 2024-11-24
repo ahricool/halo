@@ -2,8 +2,6 @@ version: "3"
 
 services:
   halo:
-    build:
-      context: .
     image: sexyahri/ahri-cool:latest
     restart: on-failure:3
     depends_on:
@@ -16,21 +14,21 @@ services:
     ports:
       - "8090:8090"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8090/actuator/health/readiness"]
+      test: [ "CMD", "curl", "-f", "http://localhost:8090/actuator/health/readiness" ]
       interval: 30s
       timeout: 5s
       retries: 5
       start_period: 30s
     environment:
-       - SPRING_THYMELEAF_CACHE=false
+      - SPRING_THYMELEAF_CACHE=false
     command:
       - --spring.r2dbc.url=r2dbc:pool:postgresql://halodb/halo
-      - --spring.r2dbc.username=halo
+      - --spring.r2dbc.username=${DATABASE_USERNAME}
       # PostgreSQL 的密码，请保证与下方 POSTGRES_PASSWORD 的变量值一致。
-      - --spring.r2dbc.password=openpostgresql
+      - --spring.r2dbc.password=${DATABASE_PASSWORD}
       - --spring.sql.init.platform=postgresql
       # 外部访问地址，请根据实际需要修改
-      - --halo.external-url=http://localhost:8090/
+      - --halo.external-url=https://ahri.cool/
 
   halodb:
     image: postgres:15.4
@@ -47,10 +45,10 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      - POSTGRES_PASSWORD=openpostgresql
-      - POSTGRES_USER=halo
+      - POSTGRES_PASSWORD=${DATABASE_PASSWD}
+      - POSTGRES_USER=${DATABASE_USERNAME}
       - POSTGRES_DB=halo
-      - PGUSER=halo
+      - PGUSER=${DATABASE_PASSWD}
 
 networks:
   halo_network:
