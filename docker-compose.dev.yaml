@@ -4,7 +4,7 @@ services:
   halo:
     build:
       context: .
-    image: sexyahri/ahri-cool:latest
+    image: public.ecr.aws/o7d5s8i7/ahri:latest
     restart: on-failure:3
     depends_on:
       halodb:
