@@ -2,6 +2,8 @@ version: "3"
 
 services:
   halo:
+    build:
+      context: .
     image: sexyahri/ahri-cool:latest
     restart: on-failure:3
     depends_on:
@@ -10,7 +12,7 @@ services:
     networks:
       halo_network:
     volumes:
-      - ./halo2:/root/.halo2
+      - ./data:/root/.halo2
     ports:
       - "8090:8090"
     healthcheck:
@@ -19,6 +21,8 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    environment:
+       - SPRING_THYMELEAF_CACHE=false
     command:
       - --spring.r2dbc.url=r2dbc:pool:postgresql://halodb/halo
       - --spring.r2dbc.username=halo
@@ -34,7 +38,9 @@ services:
     networks:
       halo_network:
     volumes:
-      - ~/holadb:/var/lib/postgresql/data
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     healthcheck:
       test: [ "CMD", "pg_isready" ]
       interval: 10s
