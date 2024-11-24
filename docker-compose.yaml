@@ -2,7 +2,7 @@ version: "3"
 
 services:
   halo:
-    image: ahri-cool:latest
+    image: sexyahri/ahri-cool:latest
     restart: on-failure:3
     depends_on:
       halodb:
@@ -19,8 +19,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-    environment:
-      - SPRING_THYMELEAF_CACHE=false
     command:
       - --spring.r2dbc.url=r2dbc:pool:postgresql://halodb/halo
       - --spring.r2dbc.username=${DATABASE_USERNAME}
