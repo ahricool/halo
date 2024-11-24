@@ -31,6 +31,7 @@ nbproject/private/
 build/
 nbbuild/
 dist/
+!data/themes/*/templates/assets/dist
 nbdist/
 .nb-gradle/
 
