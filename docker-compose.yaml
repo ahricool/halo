@@ -46,7 +46,7 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_USER=${DATABASE_USERNAME}
       - POSTGRES_DB=halo
-      - PGUSER=${DATABASE_PASSWORD}
+      - PGUSER=${DATABASE_USERNAME}
 
 networks:
   halo_network:
