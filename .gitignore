@@ -79,6 +79,7 @@ application/src/main/resources/presets/
 
 .pnpm-store
 
-database/
+data/database/
 data/keys/
 data/halo/
+data/indices/

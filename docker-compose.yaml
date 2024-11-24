@@ -38,7 +38,7 @@ services:
     networks:
       halo_network:
     volumes:
-      - ./database:/var/lib/postgresql/data
+      - ./data/database:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
