@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+// import { useSiteStore } from '../stores/site';
 import { useThemeStore } from '../stores/theme';
 import Header from './Header.vue';
 import Footer from './Footer.vue';

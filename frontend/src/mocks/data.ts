@@ -1,4 +1,4 @@
-import { Post, Page, Tag, Category, SiteConfig } from '../services/api';
+import type { Post, Page, Tag, Category, SiteConfig } from '../services/api';
 
 export const mockSiteConfig: SiteConfig = {
   title: 'Sakura Theme',
@@ -54,8 +54,8 @@ Enjoy blogging with Sakura! 🌸
       name: 'Admin',
       avatar: '/images/default/avatar.png',
     },
-    tags: [mockTags[0], mockTags[2]],
-    categories: [mockCategories[0]],
+    tags: [mockTags[0]!, mockTags[2]!],
+    categories: [mockCategories[0]!],
     createdAt: '2024-01-01T00:00:00Z',
     updatedAt: '2024-01-01T00:00:00Z',
     publishedAt: '2024-01-01T00:00:00Z',
@@ -86,8 +86,8 @@ Vue 3 is faster and more efficient than Vue 2...
       name: 'Admin',
       avatar: '/images/default/avatar.png',
     },
-    tags: [mockTags[0], mockTags[1]],
-    categories: [mockCategories[0]],
+    tags: [mockTags[0]!, mockTags[1]!],
+    categories: [mockCategories[0]!],
     createdAt: '2024-01-02T00:00:00Z',
     updatedAt: '2024-01-02T00:00:00Z',
     publishedAt: '2024-01-02T00:00:00Z',
@@ -118,8 +118,8 @@ Know when to use interfaces and when to use types...
       name: 'Admin',
       avatar: '/images/default/avatar.png',
     },
-    tags: [mockTags[1], mockTags[2]],
-    categories: [mockCategories[0]],
+    tags: [mockTags[1]!, mockTags[2]!],
+    categories: [mockCategories[0]!],
     createdAt: '2024-01-03T00:00:00Z',
     updatedAt: '2024-01-03T00:00:00Z',
     publishedAt: '2024-01-03T00:00:00Z',

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import { api, SiteConfig } from '../services/api';
+import { api, type SiteConfig } from '../services/api';
 
 export const useSiteStore = defineStore('site', () => {
   // State

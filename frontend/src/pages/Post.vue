@@ -85,7 +85,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import Layout from '../components/Layout.vue';
 import { mockPosts } from '../mocks/data';
-import { Post } from '../services/api';
+import type { Post } from '../services/api';
 
 const route = useRoute();
 const post = ref<Post | null>(null);
@@ -97,7 +97,7 @@ onMounted(async () => {
   // post.value = await api.getPost(postId);
   
   const postId = route.params.id as string;
-  post.value = mockPosts.find(p => p.id === postId) || mockPosts[0];
+  post.value = mockPosts.find(p => p.id === postId) ?? mockPosts[0] ?? null;
   loading.value = false;
 });
 

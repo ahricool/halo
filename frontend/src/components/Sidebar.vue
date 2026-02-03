@@ -60,7 +60,7 @@
 import { ref, onMounted } from 'vue';
 import { useSiteStore } from '../stores/site';
 import { mockPosts, mockTags, mockCategories } from '../mocks/data';
-import { Post, Tag, Category } from '../services/api';
+import type { Post, Tag, Category } from '../services/api';
 
 const siteStore = useSiteStore();
 const recentPosts = ref<Post[]>([]);

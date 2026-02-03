@@ -42,7 +42,7 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import Layout from '../components/Layout.vue';
 import { mockPosts, mockTags } from '../mocks/data';
-import { Post, Tag } from '../services/api';
+import type { Post, Tag } from '../services/api';
 
 const route = useRoute();
 const posts = ref<Post[]>([]);

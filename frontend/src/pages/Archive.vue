@@ -37,12 +37,7 @@
 import { ref, onMounted, computed } from 'vue';
 import Layout from '../components/Layout.vue';
 import { mockPosts } from '../mocks/data';
-import { Post } from '../services/api';
-
-interface PostGroup {
-  year: string;
-  posts: Post[];
-}
+import type { Post } from '../services/api';
 
 const posts = ref<Post[]>([]);
 const totalPosts = computed(() => posts.value.length);

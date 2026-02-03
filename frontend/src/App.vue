@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { useSiteStore } from './stores/site';
+// import { useSiteStore } from './stores/site';
 import { useThemeStore } from './stores/theme';
 
-const siteStore = useSiteStore();
+// const siteStore = useSiteStore();
 const themeStore = useThemeStore();
 
 onMounted(() => {

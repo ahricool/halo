@@ -71,7 +71,7 @@ import { ref, onMounted } from 'vue';
 import Layout from '../components/Layout.vue';
 import { useSiteStore } from '../stores/site';
 import { mockPosts } from '../mocks/data';
-import { Post } from '../services/api';
+import type { Post } from '../services/api';
 
 const siteStore = useSiteStore();
 const posts = ref<Post[]>([]);

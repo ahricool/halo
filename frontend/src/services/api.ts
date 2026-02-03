@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 
 // API Base URL from environment variable
 const baseURL = import.meta.env.VITE_API_BASE || '/api';

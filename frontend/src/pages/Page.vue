@@ -32,7 +32,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import Layout from '../components/Layout.vue';
 import { mockPages } from '../mocks/data';
-import { Page } from '../services/api';
+import type { Page } from '../services/api';
 
 const route = useRoute();
 const page = ref<Page | null>(null);
@@ -44,7 +44,7 @@ onMounted(async () => {
   // page.value = await api.getPageBySlug(slug);
   
   const slug = route.params.slug as string;
-  page.value = mockPages.find(p => p.slug === slug) || mockPages[0];
+  page.value = mockPages.find(p => p.slug === slug) ?? mockPages[0] ?? null;
   loading.value = false;
 });
 
