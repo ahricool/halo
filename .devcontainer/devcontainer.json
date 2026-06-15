@@ -15,7 +15,7 @@
             "version": "17",
             "jdkDistro": "tem"
         },
-        "ghcr.io/devcontainers/features/node:1": {
+        "ghcr.io/devcontainers/features/node:2": {
             "version": "20"
         },
         "ghcr.io/devcontainers/features/github-cli:1": {}
